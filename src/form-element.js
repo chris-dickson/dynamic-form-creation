@@ -31,8 +31,13 @@ import {bindable} from 'aurelia-framework';
 export class FormElement {
   @bindable key;
   @bindable value;
+  @bindable combinedValue;
 
   get display() {
-    return `${this.key}:"${this.value}"`;
+    return this.combinedValue;
+  }
+
+  valueChanged() {
+    this.combinedValue = this.key + ':"' + this.value + '"';
   }
 }
