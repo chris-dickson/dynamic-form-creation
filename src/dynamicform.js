@@ -26,52 +26,13 @@
  *  SOFTWARE.
  * /
  */
-import { inject } from 'aurelia-framework';
-import {Router} from 'aurelia-router';
 
-@inject(Router)
-export class Groups {
-  // App specific
-  router;
-  params;
 
-  state = {};
+export class DynamicFormCreation {
 
-  heading = 'Search for Groups';
-  query;
-  page;
 
-  queryResultsPlaceholder;
-
-  constructor(router) {
-    this.router = router;
-  }
-
-  buildState() {
-    this.state = {
-      q: this.query
-    };
-    if (this.page && this.page !== '') {
-      this.state.p = this.page;
-    }
-  }
-
-  submit() {
-    this.buildState();
-    this.router.navigateToRoute('groups', this.state, {replace: true});
+  constructor() {
   }
 
 
-  doQuery() {
-    this.queryResultsPlaceholder = 'Executing query for ' + this.query + (':' + this.page);
-  }
-
-  activate(params) {
-    this.params = params;
-    if (params.q) {
-      this.query = params.q;
-      this.buildState();
-      this.doQuery();
-    }
-  }
 }
