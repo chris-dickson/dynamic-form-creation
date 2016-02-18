@@ -26,26 +26,26 @@
  *  SOFTWARE.
  * /
  */
-
+import _ from 'lodash';
 import {bindable} from 'aurelia-framework';
 export class DynamicFormCreation {
 
-  properties = ['Name','Age','Height','Weight'];
+  properties = {
+    Name: '',
+    Age: '',
+    Height: '',
+    Weight: ''
+  };
+  keys = _.keys(this.properties);
 
   @bindable formElementValues = {};
-  combined;
 
   constructor() {
   }
 
   get combined() {
-    var combinedStr = '';
-    for (var key in this.formElementValues) {
-      if (this.formElementValues.hasOwnProperty(key)) {
-        combinedStr += this.formElementValues[key];
-      }
-    }
+    return _.map(this.properties, (val, key) => val).join('');
   }
 
-
+  submit() {}
 }

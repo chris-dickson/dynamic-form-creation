@@ -29,15 +29,10 @@
 import {bindable} from 'aurelia-framework';
 
 export class FormElement {
-  inputValue;
   @bindable key;
+  @bindable value;
 
-  constructor() {
-
+  get display() {
+    return `${this.key}:"${this.value}"`;
   }
-
-  get value() {
-    return this.key + ':"' + this.inputValue + '"';
-  }
-
 }

@@ -34,12 +34,12 @@
 
     <div>
       <div>Generating a form based on the properties:</div>
-      <span style="font-weight: bold" repeat.for="property of properties">${property} </span>
+      <span style="font-weight: bold">${keys.join(' ')}</span>
     </div>
 
     <form style="border:1px solid lightgrey" role="form" submit.delegate="submit()">
 
-      <form-element repeat.for="property of properties" key.bind="property" value.bind="$parent.formElementValues[property]"></form-element>
+      <form-element repeat.for="key of keys" key.bind="key" value.two-way="properties[key]"></form-element>
 
       <div>
         <span>Combined:</span><span>${combined}</span>
