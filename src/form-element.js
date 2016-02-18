@@ -33,10 +33,6 @@ export class FormElement {
   @bindable value;
   @bindable combinedValue;
 
-  get display() {
-    return this.combinedValue;
-  }
-
   valueChanged() {
     this.combinedValue = this.key + ':"' + this.value + '"';
   }

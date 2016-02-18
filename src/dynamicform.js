@@ -37,14 +37,13 @@ export class DynamicFormCreation {
     Weight: ''
   };
   keys = _.keys(this.properties);
-
-  @bindable formElementValues = {};
+  combined;
 
   constructor() {
   }
 
-  get combined() {
-    return _.map(this.properties, (val, key) => val).join('');
+  propertiesChanged() {
+    this.combined = return _.map(this.properties, (val, key) => val).join('');
   }
 
   submit() {}
