@@ -1,6 +1,6 @@
-# route-navigation-test
+# dynamic-form-creation
 
-A simple application illustrating how to use routes and query parameters to switch between views in Aurelia.
+A simple application illustrating how to compose an arbitrary number of custom components and bind them to a containing (parent) view.
 
 ## Running The App
 
