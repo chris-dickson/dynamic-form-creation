@@ -26,15 +26,18 @@
  *  SOFTWARE.
  * /
  */
+import {bindable} from 'aurelia-framework';
 
-
-export class DynamicFormCreation {
-
-  properties = ['Name','Age','Height','Weight'];
-
+export class FormElement {
+  inputValue;
+  @bindable key;
 
   constructor() {
+
   }
 
+  get value() {
+    return this.key + ':"' + this.inputValue + '"';
+  }
 
 }

@@ -28,22 +28,7 @@
   -->
 
 <template>
-  <require from="./form-element"></require>
-
-  <section class="au-animate">
-
-    <div>
-      <div>Generating a form based on the properties:</div>
-      <span style="font-weight: bold" repeat.for="property of properties">${property} </span>
-    </div>
-
-    <form style="border:1px solid lightgrey" role="form" submit.delegate="submit()">
-
-      <form-element repeat.for="property of properties" key.bind="property"></form-element>
-
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-
-
-  </section>
+  <div class="form-group">
+    <div style="width:60px">${key}</div><input value.bind="inputValue"><div if.bind="inputValue">${value}</div>
+  </div>
 </template>

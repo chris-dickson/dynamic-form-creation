@@ -173,3 +173,8 @@ div.au-stagger {
     opacity: 1;
   }
 }
+
+.form-group > div {
+  display:inline-block;
+}
+
