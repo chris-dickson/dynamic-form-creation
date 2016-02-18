@@ -39,10 +39,10 @@
 
     <form style="border:1px solid lightgrey" role="form" submit.delegate="submit()">
 
-      <form-element repeat.for="property of properties" key.bind="property"></form-element>
+      <form-element repeat.for="property of properties" key.bind="property" value.bind="$parent.formElementValues[property]"></form-element>
 
       <div>
-        <span>Combined:</span><span>This should contain the combined 'val()'s for each form-element.</span>
+        <span>Combined:</span><span>${combined}</span>
       </div>
 
       <button type="submit" class="btn btn-default">Submit</button>

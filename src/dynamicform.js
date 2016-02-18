@@ -27,13 +27,24 @@
  * /
  */
 
-
+import {bindable} from 'aurelia-framework';
 export class DynamicFormCreation {
 
   properties = ['Name','Age','Height','Weight'];
 
+  @bindable formElementValues = {};
+  combined;
 
   constructor() {
+  }
+
+  get combined() {
+    var combinedStr = '';
+    for (var key in this.formElementValues) {
+      if (this.formElementValues.hasOwnProperty(key)) {
+        combinedStr += this.formElementValues[key];
+      }
+    }
   }
 
 
