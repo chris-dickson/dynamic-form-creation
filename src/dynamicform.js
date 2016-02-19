@@ -44,9 +44,8 @@ export class DynamicFormCreation {
   }
 
   changeHandler() {
-    let self = this;
-    return function() {
-      console.log(_.map(self.properties, (val, key) => val).join(''));
+    return () => {
+      console.log(_.map(this.properties, (val, key) => val).join(''));
     };
   }
 
