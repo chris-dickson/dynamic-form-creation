@@ -38,13 +38,11 @@ export class DynamicFormCreation {
   };
   keys = _.keys(this.properties);
 
-  @bindable formElementValues = {};
-
   constructor() {
   }
 
   get combined() {
-    return _.map(this.properties, (val, key) => val).join('');
+    return _.map(this.properties, (val, key) => val).join(' ');
   }
 
   submit() {}
