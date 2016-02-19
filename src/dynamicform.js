@@ -43,8 +43,11 @@ export class DynamicFormCreation {
   constructor() {
   }
 
-  get combined() {
-    return _.map(this.properties, (val, key) => val).join('');
+  changeHandler() {
+    let self = this;
+    return function() {
+      console.log(_.map(self.properties, (val, key) => val).join(''));
+    };
   }
 
   submit() {}
